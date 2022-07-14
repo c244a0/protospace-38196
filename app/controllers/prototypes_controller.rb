@@ -24,7 +24,7 @@ class PrototypesController < ApplicationController
   def show
     @comment = Comment.new
     @comments = @prototype.comments.includes(:user)
-    @user = User.find(params[:id])
+    user = User.find(params[:id])
     
   end
 
@@ -62,6 +62,7 @@ class PrototypesController < ApplicationController
 
   def set_prototype
     @prototype = Prototype.find(params[:id])
+    prototype = @prototype
   end
 
   def move_to_index
